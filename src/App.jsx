@@ -151,7 +151,7 @@ function App() {
             //   const response = await axios.get('http://localhost:5500/api/data');
               const sendData2 = { input:localStorage.getItem('inputValue')};
 
-              const response = await axios.post('http://127.0.0.1:5500/submit', sendData2, {
+              const response = await axios.post('https://music-app-1.onrender.com/submit', sendData2, {
                 headers: {
                   'Content-Type': 'application/json'
                 }
