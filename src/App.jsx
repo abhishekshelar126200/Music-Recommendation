@@ -77,7 +77,7 @@ function App() {
         const sendData = { input: inputValue };
     
         try {
-          const response1 = await axios.post('http://127.0.0.1:5500/submit', sendData, {
+          const response1 = await axios.post('https://music-app-1.onrender.com/submit', sendData, {
             headers: {
               'Content-Type': 'application/json'
             }
