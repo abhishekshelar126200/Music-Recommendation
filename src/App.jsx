@@ -248,7 +248,7 @@ function App() {
                       <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
                           
                      
-                      <a href="http://localhost:5173/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></a>
+                      <a href="https://github.com/abhishekshelar126200/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></a>
 
                             
                       
@@ -261,7 +261,7 @@ function App() {
                           {filteredSongs.length > 0 && (
                               <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
                                   {filteredSongs.map((song, index) => (
-                                      <a href="http://localhost:5173/page"><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
+                                      <a href="https://github.com/abhishekshelar126200/Music-Recommendation/page"><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
                                       {song}
                                       </li>
                                       </a>
