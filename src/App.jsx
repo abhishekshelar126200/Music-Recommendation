@@ -286,14 +286,14 @@ function App() {
                       
             <Router>
           <Routes>
-                <Route path="/" element={
+                <Route path="/Music-Recommendation" element={
                     
                         
                     <Page song={"Bones"}/>
                     
                      
                 } />
-               <Route path="/page" element={
+               <Route path="/Music-Recommendation/page" element={
                     
                         
                     <Page song={inputValue}/>
@@ -301,7 +301,7 @@ function App() {
                      
                 } />
 
-                <Route path="/songs" element={
+                <Route path="/Music-Recommendation/songs" element={
                     
                         
                     <Songs />
