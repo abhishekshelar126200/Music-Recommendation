@@ -301,7 +301,7 @@ function App() {
                      
                 } />
 
-                <Route path="/Music-Recommendation/songs" element={
+                <Route path="Music-Recommendation/songs" element={
                     
                         
                     <Songs />
