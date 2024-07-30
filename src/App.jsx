@@ -303,7 +303,7 @@ function App() {
 
                 <Route path="/Music-Recommendation/songs" element={
                     
-                        
+                    console.log("I am song")
                     <Songs />
                     
                      
