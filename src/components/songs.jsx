@@ -49,7 +49,7 @@ function Songs() {
            
            localStorage.setItem('details',JSON.stringify(details))
            setSongs(JSON.parse(localStorage.getItem('songs')))
-           localStorage.setItem('currentSong',localStorage.getItem('currentSong') || songs[0].name)
+           // localStorage.setItem('currentSong',localStorage.getItem('currentSong') || songs[0].name)
            localStorage.setItem('artist',localStorage.getItem('artist') || songs[0].artists[0].name)
            localStorage.setItem('image1',localStorage.getItem('image1') || songs[0].album.images[0].url)
            localStorage.setItem('song_url',localStorage.getItem('song_url') || songs[0].preview_url)
