@@ -303,8 +303,11 @@ function App() {
 
                 <Route path="/Music-Recommendation/songs" element={
                     
-                    {console.log("I am song")}
-                    <Songs />
+                    <div>
+                        I am song
+                        <Songs />
+                    </div>
+                    
                     
                      
                 } />
