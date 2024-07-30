@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import axios from 'axios';
 import { zip } from 'lodash';
 import './App.css'
-import Songs from 'blob/main/src/components/songs'
+import Songs from './components/songs'
 import Page from './components/page'
 import { Link } from 'react-router-dom';
 import React from 'react';
