@@ -28,11 +28,11 @@ function Songs() {
             const details={nam:'',desc:'',isSet:false}
             
            if(!details.isSet){
-                const urlResponse1=await fetch(`https://v1.nocodeapi.com/o6h1/spotify/VSPDkGfpOqOguiqd/search?q=${localStorage.getItem('songName')}&type=playlist`)
+                const urlResponse1=await fetch(`https://v1.nocodeapi.com/abbyshek/spotify/SDyfMiztifIURTOV/search?q=${localStorage.getItem('songName')}&type=playlist`)
                 // const urlResponse1=await fetch(`https://v1.nocodeapi.com/a6h15hek/spotify/iWHBDcJPYiofrpmU/search?q=Animal&type=playlist`)
                 const convertedResponse1=await urlResponse1.json()
     
-                const urlResponse=await fetch(`https://v1.nocodeapi.com/o6h1/spotify/VSPDkGfpOqOguiqd/search?q=${localStorage.getItem('songName')}&type=track`)
+                const urlResponse=await fetch(`https://v1.nocodeapi.com/abbyshek/spotify/SDyfMiztifIURTOV/search?q=${localStorage.getItem('songName')}&type=track`)
                 // const urlResponse=await fetch(`https://v1.nocodeapi.com/a6h15hek/spotify/iWHBDcJPYiofrpmU/search?q=Animal&type=track`)
                 const convertedResponse=await urlResponse.json()
                 console.log(convertedResponse.tracks.items)
