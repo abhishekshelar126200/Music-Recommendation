@@ -187,7 +187,7 @@ function App() {
                           <h2></h2> 
                           <ol className="list">
                               {names.map((nam,index)=>{
-                                  return <Link to="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
+                                  return <a href="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></a>
                               })}
                           </ol>
                       </div>
