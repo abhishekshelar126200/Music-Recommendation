@@ -176,7 +176,7 @@ function App() {
         const query = event.target.value;
         setSearchQuery(query);
         if (query) {
-        const filtered = names.filter(nam =>
+        const filtered = data[0].filter(nam =>
             nam.toLowerCase().includes(query.toLowerCase())
         );
         setFilteredSongs(filtered);
@@ -215,7 +215,7 @@ function App() {
                     <div className="songlist h-5/6 overflow-y-scroll text-white m-1">
                           <h2></h2> 
                           <ol className="list">
-                              {names.map((nam,index)=>{
+                              {data[0].map((nam,index)=>{
                                   return <Link to={`https://abhishekshelar126200.github.io/Music-Recommendation/page/${nam}`}><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
                               })}
                           </ol>
