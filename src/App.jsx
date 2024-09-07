@@ -99,39 +99,9 @@ function App() {
         // if (focusSearch.current) {
         setInputValue(event.target.textContent)
         localStorage.setItem('inputValue',event.target.textContent)
-        
-            // const sendData1 = { input:event.target.textContent};
-    
-            // try {
-            // const response2 = await axios.post('http://127.0.0.1:5500/submit', sendData1, {
-            //     headers: {
-            //     'Content-Type': 'application/json'
-            //     }
-            // });
-            
-            // setData(response2.data)
-            // } catch (error) {
-            // console.error('Error:', error);
-            // }
-            
-
-        
         setLoading(false)
 
       };
-
-
-    
-
-      // const playMusic=async (songName)=>{
-      //       const urlResponse=await fetch('https://v1.nocodeapi.com/a6hishek/spotify/GuCYZbEXROAEoflL/search?q=animal&type=playlist')
-      //       const convertedResponse=await urlResponse.json()
-      //       console.log(songName)
-      //       console.log(convertedResponse.tracks.items[0].album.images[0].url)
-      //       console.log(convertedResponse.playlists)
-      // }
-      
-
     const displayCards=(e)=>{
         setSearch(e.target.value)
     }
@@ -217,7 +187,7 @@ function App() {
                           <h2></h2> 
                           <ol className="list">
                               {names.map((nam,index)=>{
-                                  return <a href="https://github.com/abhishekshelar126200/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></a>
+                                  return <a href="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></a>
                               })}
                           </ol>
                       </div>
@@ -248,7 +218,7 @@ function App() {
                       <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
                           
                      
-                      <a href="https://github.com/abhishekshelar126200/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></a>
+                      <a href="https://abhishekshelar126200.github.io/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></a>
 
                             
                       
@@ -261,7 +231,7 @@ function App() {
                           {filteredSongs.length > 0 && (
                               <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
                                   {filteredSongs.map((song, index) => (
-                                      <a href="https://github.com/abhishekshelar126200/Music-Recommendation/page"><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
+                                      <a href="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
                                       {song}
                                       </li>
                                       </a>
