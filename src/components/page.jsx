@@ -43,7 +43,7 @@ function Page(){
             const music = musicName ? musicName.replace('%20', '') : "Bones";
             setInputValue(music);
         
-            const sendData = { input: music };
+            const sendData = { input: 'Bones' };
             
             setLoading(true)
             try {
