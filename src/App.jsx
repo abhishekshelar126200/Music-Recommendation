@@ -6,7 +6,7 @@ import { zip } from 'lodash';
 import './App.css'
 import Songs from './components/songs' 
 import Page from './components/page'
-import Home from './components/home'
+import Home from './components/home' 
 import React from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
