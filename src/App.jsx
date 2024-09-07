@@ -7,7 +7,7 @@ import './App.css'
 import Songs from './components/songs'
 import Page from './components/page'
 import React from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 
 import close from './assets/close.svg';
@@ -191,7 +191,7 @@ function App() {
     return(
         
             
-        <BrowserRouter>
+        <Router>
         <div className="w-screen h-screen flex bg-black p-2">
           
             <div className='left hidden md:block w-1/4'>
@@ -307,7 +307,7 @@ function App() {
           </div>
           
       </div>
-        </BrowserRouter>
+        </Router>
 
     )
 }
