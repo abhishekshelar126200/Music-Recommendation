@@ -6,9 +6,8 @@ import { zip } from 'lodash';
 import './App.css'
 import Songs from './components/songs'
 import Page from './components/page'
-import { Link } from 'react-router-dom';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 
 import close from './assets/close.svg';
@@ -192,7 +191,7 @@ function App() {
     return(
         
             
-        
+        <BrowserRouter>
         <div className="w-screen h-screen flex bg-black p-2">
           
             <div className='left hidden md:block w-1/4'>
@@ -314,7 +313,7 @@ function App() {
           </div>
           
       </div>
-        
+        </BrowserRouter>
 
     )
 }
