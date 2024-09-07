@@ -187,7 +187,7 @@ function App() {
                           <h2></h2> 
                           <ol className="list">
                               {names.map((nam,index)=>{
-                                  return <Link to="/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
+                                  return <Link to="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
                               })}
                           </ol>
                       </div>
@@ -263,7 +263,7 @@ function App() {
                     
                      
                 } />
-               <Route path="/Music-Recommendation/page" element={
+               <Route path="Music-Recommendation/page" element={
                     
                         
                     <Page song={inputValue}/>
