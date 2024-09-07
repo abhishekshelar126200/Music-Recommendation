@@ -40,10 +40,10 @@ function Page(){
     useEffect(() => {
         
         const fetchData = async () => {
-            const music = musicName ? musicName.replace('%20', '') : "Bones";
+            const music = musicName ? decodeURIComponent(musicName) : "Bones";
             setInputValue(music);
-        
-            const sendData = { input: 'Bones' };
+            console.log(music);
+            const sendData = { input: music };
             
             setLoading(true)
             try {
