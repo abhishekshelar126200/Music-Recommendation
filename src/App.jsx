@@ -71,7 +71,6 @@ function App() {
         setLoading(true)
         hidden.current.style.display='none'
         console.log("I am in submit")
-        event.preventDefault();
         
         const sendData = { input: inputValue };
     
