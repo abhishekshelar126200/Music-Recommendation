@@ -263,7 +263,7 @@ function App() {
                     
                      
                 } />
-               <Route path="Music-Recommendation/page" element={
+               <Route path="/Music-Recommendation/page" element={
                     
                         
                     <Page song={inputValue}/>
