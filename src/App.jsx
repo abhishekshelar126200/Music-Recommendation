@@ -187,128 +187,92 @@ function App() {
     
    
 
-    return(
-        
-            
-        <BrowserRouter>
-        <div className="w-screen h-screen flex bg-black p-2">
-          
-            <div className='left hidden md:block w-1/4'>
-
-                <div className="home rounded-md h-1/5 m-1 flex flex-col gap-5 p-3">
-                    <img onClick={hideSidebar} className="close invert w-4 md:hidden absolute right-2" src={close} alt="" />
-                    <div className="logo">
-                        <img className="invert" src={logo} alt="spotify"/>
+    return (
+        <BrowserRouter basename="/Music-Recommendation">
+            <div className="w-screen h-screen flex bg-black p-2">
+                <div className='left hidden md:block w-1/4'>
+                    <div className="home rounded-md h-1/5 m-1 flex flex-col gap-5 p-3">
+                        <img className="close invert w-4 md:hidden absolute right-2" src={close} alt="" />
+                        <div className="logo">
+                            <img className="invert" src={logo} alt="spotify" />
+                        </div>
+                        <ul className="text-white text-xs font-bold flex flex-col gap-3">
+                            <li className='flex gap-2'><img className="invert w-4" src={home} alt="home" />Home</li>
+                            <li className='flex gap-2 cursor-pointer'><img className="invert w-4" src={search} alt="Search" />Search</li>
+                        </ul>
                     </div>
-                    <ul className="text-white text-xs font-bold flex flex-col gap-3">
-                        <li className='flex gap-2'><img className="invert w-4" src={home} alt="home" />Home</li>
-                        <li onClick={displaySearch} className='flex gap-2 cursor-pointer'><img className="invert w-4" src={search} alt="Search"/>Search</li>
-                    </ul>
+
+                    <div className='home rounded-md h-4/5 m-1 p-3'>
+                        <div className="sticky top-0 z-10 heading flex gap-2">
+                            <img className="invert w-4" src={playlist} alt="playlist" />
+                            <h2 className="text-white font-bold">Your Playlist</h2>
+                        </div>
+                        <div className="songlist h-5/6 overflow-y-scroll text-white m-1">
+                            <ol className="list">
+                                {data[0].map((nam, index) => (
+                                    <Link key={index} to={`/page/${nam}`}>
+                                        <li className='cursor-pointer header m-1 p-1 px-5 rounded-full'>{nam}</li>
+                                    </Link>
+                                ))}
+                            </ol>
+                        </div>
+                    </div>
                 </div>
 
-                <div className='home rounded-md h-4/5 m-1 p-3'>
-                    <div className="sticky top-0 z-10 heading flex gap-2">
-                        <img className="invert w-4" src={playlist} alt="playlist" />
-                        <h2 className="text-white font-bold">Your Playlist</h2>
-                    </div>
-                    <div className="songlist h-5/6 overflow-y-scroll text-white m-1">
-                          <h2></h2> 
-                          <ol className="list">
-                              {data[0].map((nam,index)=>{
-                                  return <Link to={`/Music-Recommendation/page/${nam}`}><li className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
-                              })}
-                          </ol>
-                      </div>
-                </div>
+                <div className='right w-full md:w-3/4 home rounded-md m-1 overflow-y-scroll'>
+                    <div className="header rounded h-12 flex items-center justify-between text-white sticky top-0 z-10 p-1">
+                        <div className="nav flex invert gap-3">
+                            <img className="hamburger w-5" src={hamburger} alt="hamburger" />
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                                    <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
 
+                        <div className="flex flex-col absolute left-1/4 top-2">
+                            <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
+                                <Link to="/Music-Recommendation/page">
+                                    <img src={search} className="invert w-4 cursor-pointer" alt="" />
+                                </Link>
+                                <input
+                                    onKeyDown={handleKeyDown}
+                                    ref={focusSearch}
+                                    value={inputValue}
+                                    onChange={handleSearch}
+                                    className='text-xs w-60 bg-transparent border-none outline-none'
+                                    type="search"
+                                    placeholder='What do you want to play?'
+                                />
+                            </div>
+
+                            {filteredSongs.length > 0 && (
+                                <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
+                                    {filteredSongs.map((song, index) => (
+                                        <Link key={index} to={`/page/${song}`}>
+                                            <li className="text-center cursor-pointer w-full border-b-2">
+                                                {song}
+                                            </li>
+                                        </Link>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+
+                        <div className="buttons1 flex gap-10 text-sm">
+                            <button className="signupbtn p-2 px-4 text-gray-600 font-bold rounded-full">Sign Up</button>
+                            <button className="loginbtn border bg-white text-black font-bold p-2 px-4 rounded-full">Log in</button>
+                        </div>
+                    </div>
+
+                    <Routes>
+                        <Route path="/" element={<Page />} />
+                        <Route path="/page/:musicName" element={<Page />} />
+                        <Route path="/songs" element={<Songs />} />
+                    </Routes>
+                </div>
             </div>
-
-          <div className='right w-full md:w-3/4 home rounded-md m-1 overflow-y-scroll'>
-          
-              <div className="header rounded h-12 flex items-center justify-between text-white sticky top-0 z-10 h-15 p-1">
-                  
-                  <div class="nav flex invert gap-3">
-                      <img onClick={showSidebar}  className="hamburger w-5" src={hamburger} alt="hamburger"/>
-                      <div className="">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                              <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                      </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                          <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                  </div>
-                
-
-                  
-
-                  <div className="flex flex-col absolute header  left-1/4 top-2">
-                      <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
-                          
-                     
-                      <Link to="/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></Link>
-
-                            
-                      
-                          
-
-                          <input onKeyDown={handleKeyDown} ref={focusSearch} value={inputValue} onChange={handleSearch}  className='text-xs w-60 bg-transparent border-none outline-none' type="search" placeholder='What do you want to play?'/>
-                          
-                      </div>
-                          
-                          {filteredSongs.length > 0 && (
-                              <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
-                                  {filteredSongs.map((song, index) => (
-                                     <Link to={`/Music-Recommendation/page/${song}`}><li className="text-center cursor-pointer w-full border-b-2" key={index}>
-                                      {song}
-                                      </li>
-                                      </Link>
-                                  ))}
-                              </ul>
-                          )}
-                  </div>
-
-                  
-              
-
-                  <div className="buttons1 flex gap-10 text-sm">
-                      <button className="signupbtn p-2 px-4 text-gray-600 font-bold rounded-full">Sign Up</button>  
-                      <button className="loginbtn border bg-white text-black font-bold p-2 px-4 rounded-full">Log in</button>
-                  </div>
-              </div>
-            
-
-          <Routes>
-                <Route path="/Music-Recommendation" element={
-                    
-                        
-                    <Page />
-                    
-                     
-                } />
-               <Route path="/Music-Recommendation/page/:musicName" element={
-                    
-                   
-                    <Page />
-                    
-                     
-                } />
-
-                <Route path="/Music-Recommendation/songs" element={
-                    
-                        
-                    <Songs />
-                    
-                     
-                } />
-
-            </Routes>
-          </div>
-          
-      </div>
         </BrowserRouter>
-
-    )
-}
-
+    );
+};
 export default App
