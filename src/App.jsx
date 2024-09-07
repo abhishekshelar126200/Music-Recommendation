@@ -6,6 +6,7 @@ import { zip } from 'lodash';
 import './App.css'
 import Songs from './components/songs'
 import Page from './components/page'
+import Home from './components/home'
 import React from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
@@ -267,6 +268,7 @@ function App() {
 
                     <Routes>
                         <Route path="/" element={<Page />} />
+                        <Route path="/home/:musicName" element={<Home />} />
                         <Route path="/page/:musicName" element={<Page />} />
                         <Route path="/songs" element={<Songs />} />
                     </Routes>
