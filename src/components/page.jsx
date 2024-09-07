@@ -40,7 +40,7 @@ function Page({song}){
     useEffect(() => {
         
         const fetchData = async () => {
-            setInputValue(musicName);
+            setInputValue(musicName || "Bones");
             console.log(inputValue || "Still In Love")
             const sendData = { input: musicName || "Bones" };
             
