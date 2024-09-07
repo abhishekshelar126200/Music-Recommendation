@@ -1,7 +1,7 @@
-import React from 'react'
+import Reactfrom 'react'
 import { useState,useEffect } from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 
 import { zip } from 'lodash';
 function Page({song}){
@@ -10,7 +10,7 @@ function Page({song}){
     const [data, setData] = useState([[],[]]);
     const [isLoading,setLoading]=useState(false)
     
-
+    const {musicName}=useParams();
     const playMusic=async (songName,poster)=>{
         localStorage.setItem('songName',songName)
         localStorage.setItem('image',poster)
@@ -40,9 +40,9 @@ function Page({song}){
     useEffect(() => {
         
         const fetchData = async () => {
-            setInputValue(localStorage.getItem('inputValue'))
+            setInputValue(musicName);
             console.log(inputValue || "Still In Love")
-            const sendData = { input: localStorage.getItem('inputValue') || "Bones" };
+            const sendData = { input: musicName || "Bones" };
             
             setLoading(true)
             try {
