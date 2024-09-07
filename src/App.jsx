@@ -279,11 +279,6 @@ function App() {
               </div>
             
 
-                          
-              
-                        
-                      
-            <Router>
           <Routes>
                 <Route path="/Music-Recommendation" element={
                     
@@ -309,7 +304,6 @@ function App() {
                 } />
 
             </Routes>
-            </Router>
           </div>
           
       </div>
