@@ -6,7 +6,7 @@ import { Link,useParams } from 'react-router-dom';
 import { zip } from 'lodash';
 function Home(){
     
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState(''); 
     const [data, setData] = useState([[],[]]);
     const [isLoading,setLoading]=useState(false)
     
