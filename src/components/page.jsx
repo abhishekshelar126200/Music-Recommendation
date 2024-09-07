@@ -83,7 +83,7 @@ function Page({song}){
                   <div className="cardContainer"></div>
                     <div className="o_card flex mt-2 flex-wrap justify-between">
                         {
-                            zip(names,posters).map(([nam,poster],index)=>{
+                            zip(data[0],data[1]).map(([nam,poster],index)=>{
                             return <Link to="https://abhishekshelar126200.github.io/Music-Recommendation/songs"><div key={index} className="card relative p-2 rounded-md mb-3 header hover:bg-[#313131] hover:w-[10.1rem] group" onClick={()=>playMusic(nam,poster)} >
                                     <div  className="play rounded-full w-10 absolute right-4 bottom-10 opacity-0 flex justify-center p-2  bg-green-400 group-hover:opacity-100 transition-opacity duration-1000">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="24" color="#000000" fill="black">
