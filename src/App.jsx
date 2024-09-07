@@ -99,9 +99,39 @@ function App() {
         // if (focusSearch.current) {
         setInputValue(event.target.textContent)
         localStorage.setItem('inputValue',event.target.textContent)
+        
+            // const sendData1 = { input:event.target.textContent};
+    
+            // try {
+            // const response2 = await axios.post('http://127.0.0.1:5500/submit', sendData1, {
+            //     headers: {
+            //     'Content-Type': 'application/json'
+            //     }
+            // });
+            
+            // setData(response2.data)
+            // } catch (error) {
+            // console.error('Error:', error);
+            // }
+            
+
+        
         setLoading(false)
 
       };
+
+
+    
+
+      // const playMusic=async (songName)=>{
+      //       const urlResponse=await fetch('https://v1.nocodeapi.com/a6hishek/spotify/GuCYZbEXROAEoflL/search?q=animal&type=playlist')
+      //       const convertedResponse=await urlResponse.json()
+      //       console.log(songName)
+      //       console.log(convertedResponse.tracks.items[0].album.images[0].url)
+      //       console.log(convertedResponse.playlists)
+      // }
+      
+
     const displayCards=(e)=>{
         setSearch(e.target.value)
     }
@@ -265,19 +295,16 @@ function App() {
                 } />
                <Route path="/Music-Recommendation/page" element={
                     
-                        
+                   
                     <Page song={inputValue}/>
                     
                      
                 } />
 
-                <Route path="Music-Recommendation/songs" element={
+                <Route path="/Music-Recommendation/songs" element={
                     
-                    <div>
-                        I am song
-                        <Songs />
-                    </div>
-                    
+                        
+                    <Songs />
                     
                      
                 } />
