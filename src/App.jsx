@@ -165,7 +165,7 @@ function App() {
           };
       
           fetchData();
-      }, [inputValue]);
+      }, []);
 
 
     const [names, posters] = data;
@@ -260,7 +260,7 @@ function App() {
                           {filteredSongs.length > 0 && (
                               <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
                                   {filteredSongs.map((song, index) => (
-                                     <Link to="https://abhishekshelar126200.github.io/Music-Recommendation/page"><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
+                                     <Link to={`https://abhishekshelar126200.github.io/Music-Recommendation/page/${song}`}><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
                                       {song}
                                       </li>
                                       </Link>
