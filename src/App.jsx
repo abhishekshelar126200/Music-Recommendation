@@ -148,7 +148,7 @@ function App() {
             try {
               console.log("I am in submit");
             //   const response = await axios.get('http://localhost:5500/api/data');
-              const sendData2 = { input:localStorage.getItem('inputValue')};
+              const sendData2 = { input:localStorage.getItem('inputValue') || 'Bones'};
 
               const response = await axios.post('https://music-app-1.onrender.com/submit', sendData2, {
                 headers: {
