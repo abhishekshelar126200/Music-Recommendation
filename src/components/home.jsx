@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link,useParams } from 'react-router-dom';
 
 import { zip } from 'lodash';
-function Page(){
+function Home(){
     
     const [inputValue, setInputValue] = useState('');
     const [data, setData] = useState([[],[]]);
