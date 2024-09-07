@@ -267,8 +267,7 @@ function App() {
                     </div>
 
                     <Routes>
-                        <Route path="/" element={<Page />} />
-                        <Route path="/home/:musicName" element={<Home />} />
+                        <Route path="/" element={<Home />} />
                         <Route path="/page/:musicName" element={<Page />} />
                         <Route path="/songs" element={<Songs />} />
                     </Routes>
