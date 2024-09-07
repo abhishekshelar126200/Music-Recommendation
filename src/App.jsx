@@ -283,14 +283,14 @@ function App() {
                 <Route path="/Music-Recommendation" element={
                     
                         
-                    <Page song={"Bones"}/>
+                    <Page />
                     
                      
                 } />
                <Route path="/Music-Recommendation/page/:musicName" element={
                     
                    
-                    <Page song={inputValue}/>
+                    <Page />
                     
                      
                 } />
