@@ -42,7 +42,7 @@ function Page(){
         const fetchData = async () => {
             setInputValue(musicName ? musicName.replace('%20', '') : "Bones");
             const sendData = { 
-              input: inputValue
+              input: musicName ? musicName.replace('%20', '') : "Bones"
             };
             
             setLoading(true)
