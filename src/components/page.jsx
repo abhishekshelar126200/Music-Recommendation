@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link,useParams } from 'react-router-dom';
 
 import { zip } from 'lodash';
-function Page({song}){
+function Page(){
     
     const [inputValue, setInputValue] = useState('');
     const [data, setData] = useState([[],[]]);
@@ -41,7 +41,6 @@ function Page({song}){
         
         const fetchData = async () => {
             setInputValue(musicName || "Bones");
-            console.log(inputValue || "Still In Love")
             const sendData = { 
               input: (musicName ? musicName.replace('%20', '') : "Bones")
             };
