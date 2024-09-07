@@ -72,7 +72,7 @@ function App() {
         hidden.current.style.display='none'
         console.log("I am in submit")
         
-        const sendData = { input: inputValue };
+        const sendData = { input: inputValue || 'Bones' };
     
         try {
           const response1 = await axios.post('https://music-app-1.onrender.com/submit', sendData, {
