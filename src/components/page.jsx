@@ -42,7 +42,9 @@ function Page({song}){
         const fetchData = async () => {
             setInputValue(musicName || "Bones");
             console.log(inputValue || "Still In Love")
-            const sendData = { input: musicName || "Bones" };
+            const sendData = { 
+              input: (musicName ? musicName.replace('%20', '') : "Bones")
+            };
             
             setLoading(true)
             try {
