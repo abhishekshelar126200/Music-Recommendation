@@ -215,7 +215,7 @@ function App() {
                           <h2></h2> 
                           <ol className="list">
                               {data[0].map((nam,index)=>{
-                                  return <Link to={`https://abhishekshelar126200.github.io/Music-Recommendation/page/${nam}`}><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
+                                  return <Link to={`/Music-Recommendation/page/${nam}`}><li onClick={handleClick} className='cursor-pointer header m-1 p-1 px-5 rounded-full' key={index}>{nam}</li></Link>
                               })}
                           </ol>
                       </div>
@@ -246,7 +246,7 @@ function App() {
                       <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
                           
                      
-                      <Link to="https://abhishekshelar126200.github.io/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></Link>
+                      <Link to="/Music-Recommendation/page"><img  src={search} className="invert w-4 cursor-pointer" alt="" /></Link>
 
                             
                       
@@ -259,7 +259,7 @@ function App() {
                           {filteredSongs.length > 0 && (
                               <ul ref={hidden} className="suggestions min-h-5 max-h-60 rounded-lg p-1 example">
                                   {filteredSongs.map((song, index) => (
-                                     <Link to={`https://abhishekshelar126200.github.io/Music-Recommendation/page/${song}`}><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
+                                     <Link to={`/Music-Recommendation/page/${song}`}><li className="text-center cursor-pointer w-full border-b-2" key={index} onClick={handleClick}>
                                       {song}
                                       </li>
                                       </Link>
