@@ -24,9 +24,7 @@ function Songs() {
     useEffect(()=>{
         const playMusic=async ()=>{
             
-            // localStorage.setItem('details',"")
             localStorage.setItem('details', JSON.stringify({}));
-
             const details={nam:'',desc:'',isSet:false}
             
            if(!details.isSet){
@@ -48,16 +46,7 @@ function Songs() {
            }
            
            localStorage.setItem('details',JSON.stringify(details))
-           // setSongs(JSON.parse(localStorage.getItem('songs')))
            setSongs(JSON.parse(localStorage.getItem('songs')) || []);
-           // localStorage.setItem('currentSong',localStorage.getItem('currentSong') || songs[0].name)
-           // localStorage.setItem('artist',localStorage.getItem('artist') || songs[0].artists[0].name)
-           // localStorage.setItem('image1',localStorage.getItem('image1') || songs[0].album.images[0].url)
-           // localStorage.setItem('song_url',localStorage.getItem('song_url') || songs[0].preview_url)
-           // setName(localStorage.getItem('currentSong'))
-           // setArtistName1(localStorage.getItem('artist'))
-           // setImage(localStorage.getItem('image1'))
-           // setSong(localStorage.getItem('song_url'))
 
             if (songs.length > 0) {
             localStorage.setItem('currentSong', localStorage.getItem('currentSong') || songs[0].name);
@@ -70,7 +59,6 @@ function Songs() {
             setImage(localStorage.getItem('image1'));
             setSong(localStorage.getItem('song_url'));
         }
-        //    setArtistName1(songs[0].artists[0].name)
            if(localStorage.getItem('details'))
             {
                 setDetails(JSON.parse(localStorage.getItem('details')))
@@ -82,12 +70,6 @@ function Songs() {
     },[])
 
     
-    
-    
-    // if(localStorage.getItem('songs'))
-    // {
-    //     setSongs(JSON.parse(localStorage.getItem('songs')))
-    // }
     const playSong=(song,songname,imageLink,artistName1)=>{
         setArtistName1(artistName1)
         
