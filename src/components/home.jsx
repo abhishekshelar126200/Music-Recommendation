@@ -5,6 +5,8 @@ import { Link,useParams } from 'react-router-dom';
 
 import { zip } from 'lodash';
 function Home(){
+    console.log(process.env.NOCODEAPI_TRACK);
+    console.log(process.env.NOCODEAPI_PLAYLIST);
     
     const [inputValue, setInputValue] = useState(''); 
     const [data, setData] = useState([[],[]]);
