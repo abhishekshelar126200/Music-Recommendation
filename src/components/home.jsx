@@ -14,27 +14,6 @@ function Home(){
     const playMusic=async (songName,poster)=>{
         localStorage.setItem('songName',songName)
         localStorage.setItem('image',poster)
-        // localStorage.setItem('image',"")
-        // localStorage.setItem('details',"")
-        // localStorage.setItem('inputValue',"")
-        // console.log(songName)
-       
-        // const urlResponse=await fetch(`https://v1.nocodeapi.com/a6h1shek/spotify/QoIBbwDpyyZNDGmG/search?q=${songName}&type=track`)
-        // const convertedResponse=await urlResponse.json()
-        // console.log(convertedResponse.tracks.items[0].album.images[0].url)
-        // localStorage.setItem('songs',JSON.stringify(convertedResponse.tracks.items)   )
-        // 
-        // const urlResponse1=await fetch(`https://v1.nocodeapi.com/a6h1shek/spotify/QoIBbwDpyyZNDGmG/search?q=${songName}&type=playlist`)
-        // const convertedResponse1=await urlResponse1.json()
-        // const details={
-        //     nam:convertedResponse1.playlists.items[0].name,
-        //     desc:convertedResponse1.playlists.items[0].description
-            
-        // }
-
-        // localStorage.setItem('details',JSON.stringify(details))
-        
-        // console.log(localStorage.getItem('image'))
   }
 
     useEffect(() => {
