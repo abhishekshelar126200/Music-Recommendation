@@ -31,7 +31,7 @@ function Songs() {
             
            if(!details.isSet){
                 const urlResponse1=await fetch(process.env.NOCODEAPI_PLAYLIST)
-                const convertedResponse1=await urlResponse1.json()
+                const convertedResponse1=await urlResponse1.json() 
     
                 const urlResponse=await fetch(process.env.NOCODEAPI_TRACK)
                 const convertedResponse=await urlResponse.json()
