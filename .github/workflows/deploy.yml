@@ -50,3 +50,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+      - name: Use Secret Key in Deployment
+        run: echo "Using secret nodecode_track"
+        env:
+          NOCODEAPI_PLAYLIST: ${{ secrets.NOCODEAPI_PLAYLIST }}
+          NOCODEAPI_TRACK: ${{ secrets.NOCODEAPI_TRACK }}
+          
