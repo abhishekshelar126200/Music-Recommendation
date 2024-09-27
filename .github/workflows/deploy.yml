@@ -35,7 +35,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    environment: nocodeapi
+    environment: NoCodeApi
     if: github.ref == 'refs/heads/main'
 
     steps:
