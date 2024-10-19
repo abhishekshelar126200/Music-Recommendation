@@ -9,7 +9,7 @@ function Home(){
     const [inputValue, setInputValue] = useState(''); 
     const [data, setData] = useState([[],[]]);
     const [isLoading,setLoading]=useState(false)
-    
+     
     const {musicName}=useParams();
     const playMusic=async (songName,poster)=>{
         localStorage.setItem('songName',songName)
