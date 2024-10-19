@@ -239,7 +239,7 @@ function App() {
                     </div>
 
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/:Bones" element={<Home />} />
                         <Route path="/page/:musicName" element={<Page />} />
                         <Route path="/songs" element={<Songs />} />
                     </Routes>
