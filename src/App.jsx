@@ -161,7 +161,7 @@ function App() {
    
 
     return (
-        <BrowserRouter basename="/Music-Recommendation">
+        <BrowserRouter>
             <div className="w-screen h-screen flex bg-black p-2">
                 <div className='left hidden md:block w-1/4'>
                     <div className="home rounded-md h-1/5 m-1 flex flex-col gap-5 p-3">
