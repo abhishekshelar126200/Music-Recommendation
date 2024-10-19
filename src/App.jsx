@@ -240,7 +240,7 @@ function App() {
 
                     <Routes>
                         <Route path="/:Bones" element={<Home />} />
-                        <Route path={`/page/:${musicName}`} element={<Page />} />
+                        <Route path="/page/:musicName" element={<Page />} />
                         <Route path="/songs" element={<Songs />} />
                     </Routes>
                 </div>
