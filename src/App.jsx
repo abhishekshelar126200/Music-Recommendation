@@ -161,7 +161,7 @@ function App() {
    
 
     return (
-        <BrowserRouter basename="/Music-Recommendation">
+        <BrowserRouter>
             <div className="w-screen h-screen flex bg-black p-2">
                 <div className='left hidden md:block w-1/4'>
                     <div className="home rounded-md h-1/5 m-1 flex flex-col gap-5 p-3">
@@ -205,7 +205,7 @@ function App() {
 
                         <div className="flex flex-col absolute left-1/4 top-2">
                             <div ref={searchB} className="border border-gray-500 flex p-2 px-2 gap-2 rounded-full">
-                                <Link to="/Music-Recommendation/page">
+                                <Link to="/page">
                                     <img src={search} className="invert w-4 cursor-pointer" alt="" />
                                 </Link>
                                 <input
@@ -239,7 +239,7 @@ function App() {
                     </div>
 
                     <Routes>
-                        <Route path="/:Bones" element={<Home />} />
+                        <Route path="/" element={<Home />} />
                         <Route path="/page/:musicName" element={<Page />} />
                         <Route path="/songs" element={<Songs />} />
                     </Routes>
