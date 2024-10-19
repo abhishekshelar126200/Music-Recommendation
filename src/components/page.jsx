@@ -45,7 +45,7 @@ function Page(){
 
         fetchData()
 
-      }, [])
+      }, [musicName])
 
       const [names, posters] = data;
 
