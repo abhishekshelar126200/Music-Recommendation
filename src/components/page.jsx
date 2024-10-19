@@ -17,7 +17,7 @@ function Page(){
   }
 
     useEffect(() => {
-        
+        setData([[],[]]);
         const fetchData = async () => {
             const music = musicName ? decodeURIComponent(musicName) : "Bones";
             setInputValue(music);
@@ -53,14 +53,15 @@ function Page(){
     return(
         <div className="spotifyPlaylist p-2 w-full">
                   <h1 className="text-white font-bold px-5">Spotify Playlist</h1>
-                  {isLoading ? (
+                  {data[0].length<=0 ? (
                           <div class="relative left-1/2 w-10 h-10">
                               <div class="absolute inset-0 border-4 border-gray-300 rounded-full"></div>
                               <div class="absolute inset-0 border-4 border-t-4 border-t-blue-500 border-gray-300 rounded-full animate-spin-slow"></div>
                           </div>
-                  ):<></>}
+                  ):
 
-                  <div className="cardContainer"></div>
+                <>
+                    <div className="cardContainer"></div>
                     <div className="o_card flex mt-2 flex-wrap justify-between">
                         {
                             zip(data[0],data[1]).map(([nam,poster],index)=>{
@@ -78,6 +79,9 @@ function Page(){
                         }
                         
                     </div>
+                </>
+                  
+                    }
 
             </div>
 
