@@ -28,10 +28,10 @@ function Songs() {
             const details={nam:'',desc:'',isSet:false}
             
            if(!details.isSet){
-                const urlResponse1=await fetch(process.env.NOCODEAPI_PLAYLIST)
+                const urlResponse1=await fetch(`https://v1.nocodeapi.com/abbyshek/spotify/SDyfMiztifIURTOV/search?q=${localStorage.getItem('songName')}&type=playlist`)
                 const convertedResponse1=await urlResponse1.json() 
     
-                const urlResponse=await fetch(process.env.NOCODEAPI_TRACK)
+                const urlResponse=await fetch(`https://v1.nocodeapi.com/abbyshek/spotify/SDyfMiztifIURTOV/search?q=${localStorage.getItem('songName')}&type=track`)
                 const convertedResponse=await urlResponse.json()
                 console.log(convertedResponse.tracks.items)
                 localStorage.setItem('songs',JSON.stringify(convertedResponse.tracks.items))
@@ -91,7 +91,7 @@ function Songs() {
         if (isPause) {
             audioRef.current.play();
         } 
-    },[playsong])
+    },[currentSong])
 
 
     const playmusic=()=>{
